@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavbarComponents from './Components/Navbar/Navbar'
 import HomePage from './Components/HomePage/HomePage'
 import Exhibit from './Components/Exhibit/Exhibit'
@@ -9,14 +9,16 @@ import { Switch, Route } from 'react-router-dom';
 
 export const App = () => (
     <>
-        <NavbarComponents />
+        <div className="bg-secondary">
+            <NavbarComponents />
 
-        <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/exhibit' component={Exhibit} />
-            <Route path='/museum' component={Museum} />
-            <Route path='/university' component={University} />
-        </Switch>
+            <Switch>
+                <Route exact path='/' component={HomePage} />
+                <Route path='/exhibit' component={Exhibit} />
+                <Route path='/museum' component={Museum} />
+                <Route path='/university' component={University} />
+            </Switch>
+        </div>
     </>
 )
 
